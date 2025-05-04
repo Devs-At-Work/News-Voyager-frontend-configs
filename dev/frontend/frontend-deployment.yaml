@@ -1,0 +1,33 @@
+# Frontend Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: news-voyager
+  labels:
+    app: frontend
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: deepanshurawat6/frontend:1.0.0-5
+          resources:
+            requests:
+              cpu: 200m
+              memory: 0.3Gi
+            limits:
+              cpu: 400m
+              memory: 0.6Gi
+          ports:
+            - containerPort: 5173
+          env:
+            - name: BACKEND_URL
+              value: "http://backend-service:3001"

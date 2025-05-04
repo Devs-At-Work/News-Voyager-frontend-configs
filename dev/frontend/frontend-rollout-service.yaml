@@ -1,0 +1,13 @@
+# Frontend Rollout Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-rollout-service
+  namespace: news-voyager
+spec:
+  ports:
+    - port: 80
+      targetPort: 5173
+  selector:
+    app: frontend-rollout
+  type: ClusterIP
