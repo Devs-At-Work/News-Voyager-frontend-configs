@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/deepanshu-rawat6/News-Voyager-frontend-configs.git
+    repoURL: https://github.com/Devs-At-Work/News-Voyager-frontend-configs.git
     targetRevision: HEAD
     path: dev/frontend
   destination:
